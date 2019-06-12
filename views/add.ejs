@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  </head>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/articles/list">Articles</a></li>
+    <li class="breadcrumb-item active">Add</li>
+  </ol>
+  <h1 class="display-4">Add Article</h1>
+  <form action="/articles/create">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title-input" type="text" name="title" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea id="body-input" name="body" class="form-control"></textarea>
+    </div>
+    <input id="submit-btn" type="submit" value="Submit" class="btn btn-primary" />
+  </form>
+</html>
