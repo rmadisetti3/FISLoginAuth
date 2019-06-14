@@ -75,17 +75,28 @@ and exposed as \`req.me\`.)`
     // (note that we lowercase it to ensure the lookup is always case-insensitive,
     // regardless of which database we're using)
     var userRecord = await User.findOne({
-      emailAddress: inputs.emailAddress.toLowerCase(),
+      email: inputs.emailAddress.toLowerCase(),
     });
+
+    if(userRecord) {
+      console.log("Match");
+      console.log(userRecord.password);
+    }
 
     // If there was no matching user, respond thru the "badCombo" exit.
     if(!userRecord) {
+      console.log("No match");
       throw 'badCombo';
     }
 
     // If the password doesn't match, then also exit thru "badCombo".
-    await sails.helpers.passwords.checkPassword(inputs.password, userRecord.password)
-    .intercept('incorrect', 'badCombo');
+    // await sails.helpers.passwords.checkPassword(inputs.password, userRecord.password)
+    // .intercept('incorrect', 'badCombo');
+    if(userRecord.password != inputs.password) { //verifies the correct password
+      console.log("Wrong password");
+      throw 'badCombo';
+    }
+
 
     // If "Remember Me" was enabled, then keep the session alive for
     // a longer amount of time.  (This causes an updated "Set Cookie"
@@ -93,6 +104,7 @@ and exposed as \`req.me\`.)`
     // we must be dealing with a traditional HTTP request in order for
     // this to work.)
     if (inputs.rememberMe) {
+      console.log('hello');
       if (this.req.isSocket) {
         sails.log.warn(
           'Received `rememberMe: true` from a virtual request, but it was ignored\n'+
