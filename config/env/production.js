@@ -47,7 +47,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     default: {
-      adapter: 'sails-mongo',
+      adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
@@ -251,9 +251,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     // onlyAllowOrigins: [
-    //   'https://example.com',
+    //   'https://as16.iotfm.org'
     //   'https://staging.example.com',
-    // ],
+     ],
 
 
     /***************************************************************************
@@ -337,7 +337,7 @@ module.exports = {
   * this, just try deploying without setting it and see if it works.)       *
   *                                                                         *
   ***************************************************************************/
-  // port: 80,
+  port: 80,
 
 
 
