@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start', 'app.js' ]
+2 info using npm@6.9.0
+3 info using node@v10.16.0
+4 verbose config Skipping project config: /home/raj/.npmrc. (matches userconfig)
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info lifecycle test-project@0.0.0~prestart: test-project@0.0.0
+7 info lifecycle test-project@0.0.0~start: test-project@0.0.0
+8 verbose lifecycle test-project@0.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle test-project@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/raj/node_modules/.bin:/home/raj/bin:/home/raj/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle test-project@0.0.0~start: CWD: /home/raj
+11 silly lifecycle test-project@0.0.0~start: Args: [ '-c', 'NODE_ENV=production node app.js "app.js"' ]
+12 silly lifecycle test-project@0.0.0~start: Returned: code: 1  signal: null
+13 info lifecycle test-project@0.0.0~start: Failed to exec start script
+14 verbose stack Error: test-project@0.0.0 start: `NODE_ENV=production node app.js "app.js"`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:301:16)
+14 verbose stack     at EventEmitter.emit (events.js:198:13)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+14 verbose stack     at ChildProcess.emit (events.js:198:13)
+14 verbose stack     at maybeClose (internal/child_process.js:982:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)
+15 verbose pkgid test-project@0.0.0
+16 verbose cwd /home/raj
+17 verbose Linux 4.15.0-1045-azure
+18 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "start" "app.js"
+19 verbose node v10.16.0
+20 verbose npm  v6.9.0
+21 error code ELIFECYCLE
+22 error errno 1
+23 error test-project@0.0.0 start: `NODE_ENV=production node app.js "app.js"`
+23 error Exit status 1
+24 error Failed at the test-project@0.0.0 start script.
+24 error This is probably not a problem with npm. There is likely additional logging output above.
+25 verbose exit [ 1, true ]

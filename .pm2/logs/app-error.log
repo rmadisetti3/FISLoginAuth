@@ -1,0 +1,99 @@
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Wed Jun 19 2019 15:44:13 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 14:19:20 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 14:31:53 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 15:08:33 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 15:23:47 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 15:30:41 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 15:43:57 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 16:06:53 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 1337
+debug: -------------------------------------------------------
+debug: Detected Sails environment is "production", but NODE_ENV is `undefined`.
+debug: Automatically setting the NODE_ENV environment variable to "production".
+debug: 
+debug: Warning: since `sails.config.session.cookie.secure` is not set to `true`, the session
+debug: cookie will be sent over non-TLS connections (i.e. with insecure http:// requests).
+debug: To enable secure cookies, set `sails.config.session.cookie.secure` to `true`.
+debug: 
+debug: If your app is behind a proxy or load balancer (e.g. on a PaaS like Heroku), you
+debug: may also need to set `sails.config.http.trustProxy` to `true`.
+debug: 
+debug: For more help:
+debug:  • https://sailsjs.com/config/session#?the-secure-flag
+debug:  • https://sailsjs.com/config/session#?do-i-need-an-ssl-certificate
+debug:  • https://sailsjs.com/config/sails-config-http#?properties
+debug:  • https://sailsjs.com/support
+debug: 
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "production" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 16:22:06 GMT+0000 (Coordinated Universal Time)
+debug: Environment : production
+debug: Port        : 80
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 16:22:52 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 80
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 16:25:21 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 80
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 17:44:38 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 80
+debug: -------------------------------------------------------
+debug: Since we are running with migrate: 'safe' and/or NODE_ENV=production (in the "development" Sails environment, to be precise), skipping the rest of the bootstrap to avoid data loss...
+debug: -------------------------------------------------------
+debug: :: Fri Jun 21 2019 18:02:01 GMT+0000 (Coordinated Universal Time)
+debug: Environment : development
+debug: Port        : 80
+debug: -------------------------------------------------------
+(node:41272) [DEP0095] DeprecationWarning: timers.enroll() is deprecated. Please use setTimeout instead.
+(node:41272) [DEP0096] DeprecationWarning: timers.unenroll() is deprecated. Please use clearTimeout instead.
