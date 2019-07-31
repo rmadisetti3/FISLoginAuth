@@ -37,17 +37,17 @@ parasails.registerPage('signup', {
   methods: {
 
     submittedForm: async function() {
-      if(this.isEmailVerificationRequired) {
-        // If email confirmation is enabled, show the success message.
-        this.cloudSuccess = true;
-      }
-      else {
-        // Otherwise, redirect to the logged-in dashboard.
-        // > (Note that we re-enable the syncing state here.  This is on purpose--
-        // > to make sure the spinner stays there until the page navigation finishes.)
-        this.syncing = true;
-        window.location = '/';
-      }
+      // if(this.formData) {
+      //   // If email confirmation is enabled, show the success message.
+      //   this.cloudSuccess = true;
+      // }
+      // else {
+      //   // Otherwise, redirect to the logged-in dashboard.
+      //   // > (Note that we re-enable the syncing state here.  This is on purpose--
+      //   // > to make sure the spinner stays there until the page navigation finishes.)
+      //   this.syncing = true;
+      //   window.location = '/';
+      // }
     },
 
     handleParsingForm: function() {
@@ -62,8 +62,8 @@ parasails.registerPage('signup', {
       }
 
       // Validate email:
-      if(!argins.emailAddress || !parasails.util.isValidEmailAddress(argins.emailAddress)) {
-        this.formErrors.emailAddress = true;
+      if(!argins.email || !parasails.util.isValidEmailAddress(argins.email)) {
+        this.formErrors.email = true;
       }
 
       // Validate password:

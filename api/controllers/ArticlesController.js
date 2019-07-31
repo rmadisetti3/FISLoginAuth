@@ -4,22 +4,22 @@
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
-var express = require("express");
-var app = express();
-var mysql = require("mysql");
-var bodyParser = require("body-parser");
+// var express = require("express");
+// var app = express();
+// var mysql = require("mysql");
+// var bodyParser = require("body-parser");
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.json());
-//app.use(express.urlencoded());
-//app.use(app.router);
-app.use(express.static("public"));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// //app.use(express.json());
+// //app.use(express.urlencoded());
+// //app.use(app.router);
+// app.use(express.static("public"));
 
-// Get the named datastore
+// // Get the named datastore
 var rdi = sails.getDatastore("default");
 
-// Get the datastore configured for a specific model
+// // Get the datastore configured for a specific model
 var rdi = Articles.getDatastore();
 
 module.exports = {
@@ -48,17 +48,18 @@ module.exports = {
     res.view("add");
   },
   create: function(req, res) {
-    var title = document.getElementById("title-input").value;
-    var body = document.getElementById("body-input").value;
+    let title = req.body.title;
+    let body = req.body.body;
     rdi.leaseConnection(
       function(connection, proceed) {
         connection.query(
-          `INSERT INTO articles(title, body) values(${title}, ${body})`,
+          `INSERT INTO fisdb.articles(title, body) values('${title}', '${body}')`,
           function(err, results, fields) {
             if (err) {
+              //console.log(err);
               return proceed(err);
             }
-
+            console.log(`Added article: ${title}, ${body}`);
             proceed(undefined, results);
           }
         );
@@ -70,39 +71,47 @@ module.exports = {
     );
   },
   delete: function(req, res) {
-    Articles.destroy({ id: req.params.id }).exec(function(err) {
-      if (err) {
-        res.send(500, { error: "Database Error" });
-      }
+    let num = req.params.num;
+    console.log(num);
+    rdi.leaseConnection(
+      function(connection, proceed) {
+        connection.query(`DELETE FROM fisdb.articles WHERE id = ${num};`, function(
+          err,
+          results,
+          fields
+        ) {
+          if (err) {
+            return proceed(err);
+          }
 
-      res.redirect("/articles/list");
-    });
-
-    return false;
-  },
-  edit: function(req, res) {
-    Articles.findOne({ id: req.params.id }).exec(function(err, article) {
-      if (err) {
-        res.send(500, { error: "Database Error" });
-      }
-
-      res.view("edit", { article: article });
-    });
-  },
-  update: function(req, res) {
-    var title = req.body.title;
-    var body = req.body.body;
-
-    Articles.update({ id: req.params.id }, { title: title, body: body }).exec(
-      function(err) {
-        if (err) {
-          res.send(500, { error: "Database Error" });
-        }
-
+          proceed(undefined, results);
+        });
+      },
+      function(err, results) {
+        // Handle results here after the connection has been closed
         res.redirect("/articles/list");
       }
     );
+  },
+  deleteAll: function(req, res) {
+    rdi.leaseConnection(
+      function(connection, proceed) {
+        connection.query(`DELETE FROM fisdb.articles;`, function(
+          err,
+          results,
+          fields
+        ) {
+          if (err) {
+            return proceed(err);
+          }
 
-    return false;
+          proceed(undefined, results);
+        });
+      },
+      function(err, results) {
+        // Handle results here after the connection has been closed
+        res.redirect("/articles/list");
+      }
+    );
   }
 };

@@ -15,7 +15,6 @@ module.exports.routes = {
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
   'GET /':                   { action: 'view-homepage-or-redirect' },
   'GET /welcome/:unused?':   { action: 'dashboard/view-welcome' },
-  '/articles/create': 'ArticlesController.create',
 
 
   'GET /faq':                { action:   'view-faq' },
@@ -63,6 +62,6 @@ module.exports.routes = {
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },
   'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
-  'POST /articles/create': { controller: 'Articles', action:'create' },
-
+  'POST /articles/create': { controller: 'ArticlesController', action:'create', csrf: false },
+  "POST /articles/delete/<%= article.id %>": { controller: 'ArticlesController', action:'delete', csrf: false },
 };

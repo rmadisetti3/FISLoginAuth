@@ -14,6 +14,7 @@ bcrypt to compare the hashed password from the database with the provided
 password attempt.`,
 
 
+
   inputs: {
 
     emailAddress: {
@@ -77,10 +78,16 @@ and exposed as \`req.me\`.)`
     var userRecord = await User.findOne({
       email: inputs.emailAddress.toLowerCase(),
     });
+    
+   
 
     if(userRecord) {
-      console.log("Match");
-      console.log(userRecord.password);
+      console.log("----------Match---Match----Match---------");
+      // console.log(await sails.helpers.passwords.hashPassword(inputs.password));
+      // console.log(await sails.helpers.passwords.checkPassword(inputs.password, '$2a$10$/uY7SXD46Mt.0xLu0wiyV.E6SqY/Ca9EG0UPMHig6srMEi1Gt/GkC'
+      //   ));
+        // await User.updateOne({ email: inputs.emailAddress.toLowerCase() })
+        // .set({ password: await sails.helpers.passwords.hashPassword(inputs.password) });
     }
 
     // If there was no matching user, respond thru the "badCombo" exit.
@@ -90,12 +97,12 @@ and exposed as \`req.me\`.)`
     }
 
     // If the password doesn't match, then also exit thru "badCombo".
-    // await sails.helpers.passwords.checkPassword(inputs.password, userRecord.password)
-    // .intercept('incorrect', 'badCombo');
-    if(userRecord.password != inputs.password) { //verifies the correct password
-      console.log("Wrong password");
-      throw 'badCombo';
-    }
+    await sails.helpers.passwords.checkPassword(inputs.password, userRecord.password)
+    .intercept('incorrect', 'badCombo');
+    // if(userRecord.password != inputs.password) { //verifies the correct password
+    //   console.log("Wrong password");
+    //   throw 'badCombo';
+    //  }
 
 
     // If "Remember Me" was enabled, then keep the session alive for
@@ -104,7 +111,6 @@ and exposed as \`req.me\`.)`
     // we must be dealing with a traditional HTTP request in order for
     // this to work.)
     if (inputs.rememberMe) {
-      console.log('hello');
       if (this.req.isSocket) {
         sails.log.warn(
           'Received `rememberMe: true` from a virtual request, but it was ignored\n'+
